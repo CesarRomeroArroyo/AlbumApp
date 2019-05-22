@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+    height: 100vh;
+ }
+body {
+    height: 100vh;
+    min-height: 100vh;
+    margin: 0;
+    border: 0px;
+    background: #f2f1f7;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Roboto Mono', monospace;
+}
+
+button {
+    border:0px;
+    border-radius: 50px;
+    background: #00c9b7;
+    width: 180px;
+    height: 50px;
+    position: relative;
+    color: #fff;
+    font-size: 0.97em;
+    letter-spacing: 0.094em;
+    cursor: pointer;
+    box-shadow: 10px 10px 14px 1px rgba(00,00,00,0.2);
+    text-align: center;
+    margin: 0 auto;
+    text-transform: uppercase;
+} 
