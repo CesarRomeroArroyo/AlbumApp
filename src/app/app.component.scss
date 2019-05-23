@@ -1,12 +1,15 @@
 .app {
-    
     position: relative;
     height: 100vh;
     width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
     &__header {
-        position: fixed;
+        flex: 0 0 auto;
+        position: relative;
+        max-height: 30%;
         width: 100%;
-        height: 30%;
+        height: 170px;
         background: linear-gradient(to top, #25cdbc, #3ed6b6, #6ce4aa, #82EAA3,#85db92 );
         -webkit-box-shadow: 0px 1px 5px 0px rgba(173,173,173,1);
         -moz-box-shadow: 0px 1px 5px 0px rgba(173,173,173,1);
@@ -88,7 +91,7 @@
         }
         &__creditval{
             position: absolute;
-            width: 50%;
+            width: 60%;
             height: 50px;
             color: white;
             top: 64%;
@@ -96,20 +99,50 @@
             border-radius: 50%;
             font-size: 40px;
         }
+        &__shoppingcart{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: white;
+            color: #85db92;
+            top: 64%;
+            left:85%;
+            border-radius: 50%;
+            font-size: 25px;
+            &__number {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                font-size: 12px;
+                background: #961a1a;
+                color: white;
+                top: -10%;
+                left: 45%;
+                border-radius: 15px;
+                width: 30px;
+                height: 20px;
+            }
+        }
     }
     &__body {
-        position: fixed;
+        position: relative;
+        flex: 1 1 auto;
         width: 100%;
         height: 60%;
         overflow-x: hidden;
         overflow-y: scroll;
-        top: 30%;
+        top: 0px;
     }
     &__footer {
-        position: fixed;
+        position: relative;
         bottom: 2px;
         width: 100%;
-        height: 10%;
+        height: 64px;
+        flex: 0 0 auto;
         background: #ffffff;
         &__menu {
             width: 100%;
@@ -143,6 +176,45 @@
                     font-size: 10px;
                 }
             }
+            &__option__active {
+                width: 20%;
+                height: 100%;  
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color:#85db92;
+                &__plus {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: linear-gradient(to top, #25cdbc, #3ed6b6, #6ce4aa, #82EAA3,#85db92 );
+                    width: 50px;
+                    height: 50px;
+                    color:white;
+                    font-size: 40px;
+                    border-radius: 50%;
+                    -webkit-box-shadow: 0px 1px 5px 0px rgba(173,173,173,1);
+                    -moz-box-shadow: 0px 1px 5px 0px rgba(173,173,173,1);
+                    box-shadow: 0px 1px 5px 0px rgba(173,173,173,1);
+                }
+                span {
+                    color: black;
+                    font-size: 10px;
+                }
+            }
         }
     }
+}
+
+.chrome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    position: absolute;
+    top:0px;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,.5);
 }

@@ -10,13 +10,13 @@ body {
     background: #f2f1f7;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Montserrat', sans-serif;
 }
 
 button {
     border:0px;
     border-radius: 50px;
-    background: #00c9b7;
+    background: linear-gradient(to top, #25cdbc, #3ed6b6, #6ce4aa, #82EAA3,#85db92 );
     width: 180px;
     height: 50px;
     position: relative;

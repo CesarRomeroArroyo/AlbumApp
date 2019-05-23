@@ -1,0 +1,18 @@
+<div class="chromes">
+    <div class="chromes__content" infiniteScroll
+        [infiniteScrollDistance]="1"
+        [infiniteScrollThrottle]="300"
+        (scrolled)="onScroll()"
+        [scrollWindow]="false">
+      <div class="chromes__content__chrome" *ngFor="let number of numbers">
+        {{number}}
+      </div>
+      
+      
+    </div>
+
+    
+</div>
+<div class="loader" *ngIf="showLoader">
+    <i class="fa fa-refresh fa-spin fa-2x" aria-hidden="true"></i>
+</div>

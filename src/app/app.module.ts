@@ -1,20 +1,43 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InitialComponent } from './components/initial/initial.component';
-import { BuyChromesComponent } from './components/buy-chromes/buy-chromes.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
+import { PhoneComponent } from './components/phone/phone.component';
+import { SmsComponent } from './components/sms/sms.component';
+import { ValidationComponent } from './components/validation/validation.component';
+import { HistoryComponent } from './components/history/history.component';
+import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
+import { ShopchromeComponent } from './components/shopchrome/shopchrome.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { AlbumsComponent } from './components/albums/albums.component';
+import { ChromesComponent } from './components/chromes/chromes.component';
+import { ChromeComponent } from './components/chrome/chrome.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     InitialComponent,
-    BuyChromesComponent
+    FavoritesComponent,
+    PhoneComponent,
+    SmsComponent,
+    ValidationComponent,
+    HistoryComponent,
+    ShoppingcartComponent,
+    ShopchromeComponent,
+    MenuComponent,
+    AlbumsComponent,
+    ChromesComponent,
+    ChromeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]
