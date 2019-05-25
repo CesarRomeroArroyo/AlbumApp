@@ -28,17 +28,17 @@
     <div class="app__header__circle4"></div>
     <div class="app__header__logo">L</div>
     <div class="app__header__phone">
-      3015175575
+      {{userKey.phone}}
     </div>
     <div class="app__header__creditlbl">
       Creditos disponibles
     </div>
     <div class="app__header__creditval">
-      250.000 C
+      {{userKey.balance}} C
     </div>
     <div class="app__header__shoppingcart" [routerLink]="['shopping']">
       <div class="app__header__shoppingcart__number">
-        100
+        {{numChromos}}
       </div>
       <i class="fa fa-shopping-cart" aria-hidden="true"></i>
     </div>

@@ -3,42 +3,16 @@
     
     <div class="shopping__content__chromes">
       
-      <div class="shopping__content__chromes__crhome">
+      <div class="shopping__content__chromes__crhome" *ngFor="let chrome of crhomes">
           <div class="shopping__content__chromes__crhome__img">C</div>
           <div class="shopping__content__chromes__crhome__name">
-            Chrome #1
+            {{chrome.b10}}
           </div>
           <div class="shopping__content__chromes__crhome__value">
-            250 C
+              {{chrome.dw}}
           </div>
       </div>
-      <div class="shopping__content__chromes__crhome">
-          <div class="shopping__content__chromes__crhome__img">C</div>
-          <div class="shopping__content__chromes__crhome__name">
-            Chrome #1
-          </div>
-          <div class="shopping__content__chromes__crhome__value">
-            250 C
-          </div>
-      </div>
-      <div class="shopping__content__chromes__crhome">
-          <div class="shopping__content__chromes__crhome__img">C</div>
-          <div class="shopping__content__chromes__crhome__name">
-            Chrome #1
-          </div>
-          <div class="shopping__content__chromes__crhome__value">
-            250 C
-          </div>
-      </div>
-      <div class="shopping__content__chromes__crhome">
-          <div class="shopping__content__chromes__crhome__img">C</div>
-          <div class="shopping__content__chromes__crhome__name">
-            Chrome #1
-          </div>
-          <div class="shopping__content__chromes__crhome__value">
-            250 C
-          </div>
-      </div>      
+           
     </div>
 
     <div class="shopping__content__chromes__total">
@@ -46,12 +20,12 @@
             Total:
           </div>
           <div class="shopping__content__chromes__total__value">
-            2.850 C
+            {{total}} C
           </div>
     </div>
 
     <div class="shopping__content__chromes__button">
-        <button><i class="fa fa-cart-plus" aria-hidden="true"></i> Comprar</button>
+        <button (click)="shop()"><i class="fa fa-cart-plus" aria-hidden="true"></i> Comprar</button>
     </div>
     
   </div>

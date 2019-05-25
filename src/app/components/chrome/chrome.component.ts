@@ -2,6 +2,7 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
 import { UiService } from 'src/app/services/ui.service';
 import { Chrome } from 'src/app/models/chromeModel';
 import { DomSanitizer } from '@angular/platform-browser';
+import { DataService } from 'src/app/services/data.service';
 @Component({
   selector: 'app-chrome',
   templateUrl: './chrome.component.html',
@@ -11,7 +12,7 @@ export class ChromeComponent implements OnInit, OnChanges {
   
   chrome: Chrome;
   quantity: number = 1;
-  constructor(private uiService: UiService, private sanitizer:DomSanitizer) { }
+  constructor(private uiService: UiService, private sanitizer:DomSanitizer, private dataService: DataService) { }
 
   ngOnInit() {
     this.uiService.showChromeModalSubscription().subscribe((data: Chrome) => {
@@ -44,6 +45,13 @@ export class ChromeComponent implements OnInit, OnChanges {
     if(this.quantity > 1){
       this.quantity--;
     }
+  }
+
+  shopChrome(){
+    for (let index = 0; index < this.quantity; index++) {
+      this.dataService.shopData(this.chrome);
+    }
+    
   }
 
 }

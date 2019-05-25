@@ -77,5 +77,4 @@ export class ChromesComponent implements OnInit, AfterContentInit {
     console.log('scrolled!!');
     
   }
-
 }

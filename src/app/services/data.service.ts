@@ -7,6 +7,8 @@ import {BehaviorSubject, Observable} from 'rxjs';
 })
 export class DataService {
   private initialDataSubject = new BehaviorSubject({});
+  private shopDataSubject = new BehaviorSubject({});
+  shopItems = [];
   constructor(private http: HttpClient) {
     
   }
@@ -39,6 +41,10 @@ export class DataService {
     return this.http.post(environment.hostUrl+'/chromo/find', data);
   }
 
+  shop(data: any) {
+    return this.http.post(environment.hostUrl+'/chromo/kart', data);
+  }
+
 
   getUuidv4() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -53,6 +59,20 @@ export class DataService {
 
   initialData(data: any) {
     this.initialDataSubject.next(data);
+  }
+
+  shopDataSubscription(): Observable<any> {
+    return this.shopDataSubject.asObservable();
+  }
+
+  shopData(data: any) {
+    this.shopItems.push(data)
+    this.shopDataSubject.next(this.shopItems);
+  }
+
+  cleanShopData() {
+    this.shopItems = [];
+    this.shopDataSubject.next(this.shopItems);
   }
 
 }
