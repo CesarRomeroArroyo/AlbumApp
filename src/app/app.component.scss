@@ -6,17 +6,20 @@
     flex-flow: column nowrap;
     &__bg-bubbles{
         position: absolute;
-        top: 170px;
+        top: 0;
         left: 0;
-        width: 95%;
-        height: 65%;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
         li{
             position: absolute;
             list-style: none;
             display: block;
             width: 40px;
             height: 40px;
-            background-color: rgba(133, 219, 146,.5);
+            background-color: white;
             bottom: -160px;
             border-radius: 50%;
             -webkit-animation: square 25s infinite;
@@ -24,7 +27,7 @@
             
             -webkit-transition-timing-function: linear;
             transition-timing-function: linear;
-            
+            border: 1px solid #f4f1f1;
             &:nth-child(1){
                 left: 10%;
             }
@@ -51,7 +54,8 @@
                 
                 animation-duration: 22s;
                 
-                background-color: rgba(133, 219, 146, .5);
+                background-color: white;
+                border: 1px solid #f4f1f1;
             }
             
             &:nth-child(5){
@@ -64,7 +68,8 @@
                 height: 20px;
                 
                 animation-delay: 3s;
-                background-color: rgba(133, 219, 146, .5);
+                background-color: white;
+                border: 1px solid #f4f1f1;
             }
             
             &:nth-child(7){
@@ -91,7 +96,8 @@
                 
                 animation-delay: 2s;
                 animation-duration: 40s;
-                background-color: rgba(133, 219, 146, .5);
+                background-color: white;
+                border: 1px solid #f4f1f1;
             }
             
             &:nth-child(10){
@@ -135,7 +141,8 @@
                 
                 animation-delay: 2s;
                 animation-duration: 40s;
-                background-color: rgba(133, 219, 146, .5);
+                background-color: white;
+                border: 1px solid #f4f1f1;
             }
 
             &:nth-child(15){
@@ -145,7 +152,8 @@
                 
                 animation-delay: 2s;
                 animation-duration: 40s;
-                background-color: rgba(133, 219, 146, .5);
+                background-color: white;
+                border: 1px solid #f4f1f1;
             }
 
             &:nth-child(16){
@@ -187,7 +195,7 @@
         position: relative;
         max-height: 30%;
         width: 100%;
-        height: 170px;
+        height: 155px;
         background: linear-gradient(to top, #25cdbc, #3ed6b6, #6ce4aa, #82EAA3,#85db92 );
         -webkit-box-shadow: 0px 1px 5px 0px rgba(173,173,173,1);
         -moz-box-shadow: 0px 1px 5px 0px rgba(173,173,173,1);
@@ -238,7 +246,7 @@
             width: 50px;
             height: 50px;
             background: black;
-            top:20%;
+            top:16%;
             left: 20px;
             border-radius: 50%;
             color: white;
@@ -247,7 +255,7 @@
             position: absolute;
             width: 170px;
             height: 50px;
-            top: 20%;
+            top: 16%;
             right: 17px;
             border-radius: 10px;
             display: flex;
@@ -273,9 +281,9 @@
             height: 50px;
             color: white;
             top: 64%;
-            left: 15px;
+            left: 20px;
             border-radius: 50%;
-            font-size: 40px;
+            font-size: 30px;
         }
         &__shoppingcart{
             display: flex;
@@ -286,8 +294,8 @@
             height: 50px;
             background: white;
             color: #85db92;
-            top: 64%;
-            left:85%;
+            top: 54%;
+            left: 83.5%;
             border-radius: 50%;
             font-size: 25px;
             &__number {
@@ -307,10 +315,8 @@
         }
     }
     &__body {
-        position: relative;
-        flex: 1 1 auto;
         width: 100%;
-        height: 60%;
+        height: 0;
         overflow-x: hidden;
         overflow-y: scroll;
         top: 0px;
@@ -322,6 +328,7 @@
         height: 64px;
         flex: 0 0 auto;
         background: #ffffff;
+        border-top: solid 1px #d4d4d4;
         &__menu {
             width: 100%;
             height: 100%;

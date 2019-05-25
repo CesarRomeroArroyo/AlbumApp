@@ -1,18 +1,30 @@
-<div class="chromes">
-    <div class="chromes__content" infiniteScroll
-        [infiniteScrollDistance]="1"
-        [infiniteScrollThrottle]="300"
-        (scrolled)="onScroll()"
-        [scrollWindow]="false">
-      <div class="chromes__content__chrome" *ngFor="let number of numbers">
-        {{number}}
+<div class="history">
+    <div class="history__content">
+      <div class="history__content__header">
+          <span class="history__content__header__title">{{title}}</span> 
       </div>
-      
-      
+      <div class="history__content__crhomes" infiniteScroll
+      [infiniteScrollDistance]="1"
+      [infiniteScrollThrottle]="300"
+      (scrolled)="onScroll()"
+      [scrollWindow]="false">
+            
+          <div _ngcontent-hau-c2="" class="crhome" (click)="showChromeModal(chrome)" *ngFor="let chrome of chromes">
+            
+            <div class="crhome__backg" [attr.data-up]="chrome.up" [attr.data-dw]="chrome.dw">
+              <div class="crhome__backg__content" >
+                  <canvas id="{{chrome.id+'-'+chrome.b10}}" class="crhome__backg__content__canvas" ></canvas>
+                  <div class="crhome__backg__content__data">{{chrome.b10}}</div>
+              </div>
+            </div>
+          </div>
+          
+        
+        
+      </div>
     </div>
-
-    
-</div>
-<div class="loader" *ngIf="showLoader">
-    <i class="fa fa-refresh fa-spin fa-2x" aria-hidden="true"></i>
-</div>
+  </div>
+  <div class="loader" *ngIf="showLoader">
+      <i class="fa fa-refresh fa-spin fa-2x" aria-hidden="true"></i>
+  </div>
+  

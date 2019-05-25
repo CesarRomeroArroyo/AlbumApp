@@ -6,10 +6,10 @@
     Ingresa tu numero para registrarte
   </div>
   <div class="phone__numero">
-    <input type="number" maxlength="10">
+    <input type="number" maxlength="10" name="phoneNumber" [(ngModel)]="phoneNumber">
   </div>
   <div class="phone__button">
-    <button [routerLink]="['/sms']">Enviar</button>
+    <button (click)="sendPhoneNumber()">Enviar</button>
   </div>
 </div>
 

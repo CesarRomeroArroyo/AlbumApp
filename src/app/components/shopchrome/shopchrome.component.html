@@ -4,31 +4,30 @@
         <div class="shopchrome__content__header__ico">
           <i class="fa fa-search" aria-hidden="true"></i>
         </div>
-          <input type="text">
+          <input type="text" name="txtSerach" [(ngModel)]="txtSerach" (blur)="search()">
       </div>
-      <div class="shopchrome__content__chromes">
-        <div class="shopchrome__content__chromes__crhome">
-          1
-        </div>
-        <div class="shopchrome__content__chromes__crhome">
-          2
-        </div>
-        <div class="shopchrome__content__chromes__crhome">
-          3
-        </div>
-        <div class="shopchrome__content__chromes__crhome">
-          4
-        </div>
-        <div class="shopchrome__content__chromes__crhome">
-          5
-        </div>
-        <div class="shopchrome__content__chromes__crhome">
-          6
-        </div>
-        <div class="shopchrome__content__chromes__crhome">
-          7
-        </div>
+      <div class="shopchrome__content__crhomes" infiniteScroll
+      [infiniteScrollDistance]="1"
+      [infiniteScrollThrottle]="300"
+      (scrolled)="onScroll()"
+      [scrollWindow]="false">
+            
+          <div _ngcontent-hau-c2="" class="crhome" (click)="showChromeModal(chrome)" *ngFor="let chrome of chromes">
+            
+            <div class="crhome__backg" [attr.data-up]="chrome.up" [attr.data-dw]="chrome.dw">
+              <div class="crhome__backg__content" >
+                  <canvas id="{{chrome.id+'-'+chrome.b10}}" class="crhome__backg__content__canvas" ></canvas>
+                  <div class="crhome__backg__content__data">{{chrome.b10}}</div>
+              </div>
+            </div>
+          </div>
+          
+        
+        
       </div>
     </div>
+  </div>
+  <div class="loader" *ngIf="showLoader">
+      <i class="fa fa-refresh fa-spin fa-2x" aria-hidden="true"></i>
   </div>
   

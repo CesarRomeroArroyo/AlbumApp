@@ -1,23 +1,34 @@
-<div class="chrome">
-  <div class="chrome__header">
-    <i class="fa fa-times " aria-hidden="true"></i>
-  </div>
+<div class="chrome"> 
   <div class="chrome__img">
-    <img src="https://dummyimage.com/300x178/b8b8b8/fff" alt="">
+    <div class="chrome__img__backg">
+        <div _ngcontent-hau-c2="" class="crhome" >
+            <div class="crhome__backg" [attr.data-up]="chrome.up" [attr.data-dw]="chrome.dw">
+                <div class="crhome__backg__content" >
+                    <canvas id="{{chrome.id+'modal'+chrome.b10}}" class="crhome__backg__content__canvas" ></canvas>
+                    <div class="crhome__backg__content__data">{{chrome.b10}}</div>
+                </div>
+              </div>
+          </div>
+    </div>
+   
   </div>
-  <div class="chrome__value">
-    280 C
+  
+  <div class="chrome__description" [innerHTML]="chrome.htmlSafe"><h1>Titulo</h1><p>Aqui iria la descripcion</p></div>
+  <div class="chrome__cart" *ngIf="chrome.shopping" >
+    <button (click)="removeQuantity()">-</button>
+    <input type="text" name="quantity" [(ngModel)]="quantity">
+    <button (click)="addQuantity()">+</button>
   </div>
-  <div class="chrome__description"></div>
-  <div class="chrome__cart">
-    <button>-</button>
-    <input type="text">
-    <button>+</button>
-  </div>
-  <div class="chrome__shop">
+  <div class="chrome__shop" *ngIf="chrome.shopping">
     <button>
       <i class="fa fa-cart-plus" aria-hidden="true"></i>
       Agregar al carrito
+    </button>
+  </div>
+  <div class="chrome__close">
+    <button (click)="hideModal()">
+      <i class="fa fa-external-link" aria-hidden="true"></i>
+      Cerrar
     </button>
   </div>
   

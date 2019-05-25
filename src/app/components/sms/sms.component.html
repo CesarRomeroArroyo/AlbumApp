@@ -6,43 +6,43 @@
     Ingresa el codigo de verificacion recibido
   </div>
   <div class="sms__numero">
-    <div class="sms__numero__num"></div>
-    <div class="sms__numero__num"></div>
-    <div class="sms__numero__num"></div>
-    <div class="sms__numero__num"></div>
+    <div class="sms__numero__num">{{number1}}</div>
+    <div class="sms__numero__num">{{number2}}</div>
+    <div class="sms__numero__num">{{number3}}</div>
+    <div class="sms__numero__num">{{number4}}</div>
   </div>
   <div class="sms__footer">
     <div class="sms__footer__content">
       <div class="sms__footer__content__fila">
-        <div class="sms__footer__content__fila__columna">
+        <div class="sms__footer__content__fila__columna" (click)="addNumber('1')">
           1
         </div>
-        <div class="sms__footer__content__fila__columna">
+        <div class="sms__footer__content__fila__columna" (click)="addNumber('2')">
           2
         </div>
-        <div class="sms__footer__content__fila__columna">
+        <div class="sms__footer__content__fila__columna" (click)="addNumber('3')">
           3
         </div>
       </div>
       <div class="sms__footer__content__fila">
-        <div class="sms__footer__content__fila__columna">
+        <div class="sms__footer__content__fila__columna" (click)="addNumber('4')">
           4
         </div>
-        <div class="sms__footer__content__fila__columna">
+        <div class="sms__footer__content__fila__columna" (click)="addNumber('5')">
           5
         </div>
-        <div class="sms__footer__content__fila__columna">
+        <div class="sms__footer__content__fila__columna" (click)="addNumber('6')">
           6
         </div>
       </div>
       <div class="sms__footer__content__fila">
-        <div class="sms__footer__content__fila__columna">
+        <div class="sms__footer__content__fila__columna" (click)="addNumber('7')">
           7
         </div>
-        <div class="sms__footer__content__fila__columna">
+        <div class="sms__footer__content__fila__columna" (click)="addNumber('8')">
           8
         </div>
-        <div class="sms__footer__content__fila__columna">
+        <div class="sms__footer__content__fila__columna" (click)="addNumber('9')">
           9
         </div>
       </div>
@@ -50,11 +50,11 @@
         <div class="sms__footer__content__fila__columna">
           
         </div>
-        <div class="sms__footer__content__fila__columna">
+        <div class="sms__footer__content__fila__columna" (click)="addNumber('0')">
           0
         </div>
-        <div class="sms__footer__content__fila__columna" >
-          <a [routerLink]="['/albumes']"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+        <div class="sms__footer__content__fila__columna" (click)="addNumber('BCK')">
+          <i class="fa fa-arrow-left" aria-hidden="true"></i>
         </div>
       </div>
     </div>

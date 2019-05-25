@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -37,7 +39,9 @@ import { ChromeComponent } from './components/chrome/chrome.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

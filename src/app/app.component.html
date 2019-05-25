@@ -1,4 +1,4 @@
-<div class="app" *ngIf="!keyAlbum">
+<div class="app" *ngIf="keyAlbum">
     <ul class="app__bg-bubbles">
         <li></li>
         <li></li>
@@ -71,8 +71,8 @@
   </div>
 </div>
 
-<!--<div class="chrome">
+<div class="chrome" *ngIf="chromeToShow.show">
   <app-chrome></app-chrome>
-</div>-->
+</div>
 
-<app-validation *ngIf="keyAlbum"></app-validation>
+<app-validation *ngIf="!keyAlbum"></app-validation>

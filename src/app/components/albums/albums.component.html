@@ -1,32 +1,19 @@
 <div class="albums">
     <div class="albums__content">
       
-      <div class="albums__content__chromes">
+      <div class="albums__content__chromes" infiniteScroll
+      [infiniteScrollDistance]="1"
+      [infiniteScrollThrottle]="300"
+      (scrolled)="onScroll()"
+      [scrollWindow]="false">
         
-        <div class="albums__content__chromes__crhome" [routerLink]="['/chromes', '1']">
+        <div class="albums__content__chromes__crhome" [routerLink]="['/chromes', album.id]" *ngFor="let album of albums">
             <div class="albums__content__chromes__crhome__img">C</div>
             <div class="albums__content__chromes__crhome__name">
-              &nbsp;&nbsp; Album #1
+              &nbsp;&nbsp; {{album.title}} #{{album.id}}
             </div>
         </div>
-        <div class="albums__content__chromes__crhome" [routerLink]="['/chromes', '1']">
-            <div class="albums__content__chromes__crhome__img">C</div>
-            <div class="albums__content__chromes__crhome__name">
-              &nbsp;&nbsp; Album #2
-            </div>
-        </div>
-        <div class="albums__content__chromes__crhome" [routerLink]="['/chromes', '1']">
-            <div class="albums__content__chromes__crhome__img">C</div>
-            <div class="albums__content__chromes__crhome__name">
-              &nbsp;&nbsp; Album #3
-            </div>
-        </div>
-        <div class="albums__content__chromes__crhome" [routerLink]="['/chromes', '1']">
-            <div class="albums__content__chromes__crhome__img">C</div>
-            <div class="albums__content__chromes__crhome__name">
-              &nbsp;&nbsp; Album #4
-            </div>
-        </div>      
+           
       </div>
       
     </div>

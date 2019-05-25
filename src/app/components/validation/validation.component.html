@@ -1,3 +1,3 @@
 
-<!--<app-phone></app-phone>-->
-<app-sms></app-sms>
+<app-phone *ngIf="!showSms"></app-phone>
+<app-sms *ngIf="showSms" ></app-sms>

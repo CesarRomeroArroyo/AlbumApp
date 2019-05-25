@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-validation',
@@ -6,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./validation.component.scss']
 })
 export class ValidationComponent implements OnInit {
-
-  constructor() { }
+  showSms: boolean;
+  constructor(private uiService: UiService) {
+    this.showSms = false;
+    this.uiService.showSmsSubscription().subscribe((data: any) => {
+      if(data=== true || data=== false)
+        this.showSms = data;
+      
+    });
+  }
 
   ngOnInit() {
   }
