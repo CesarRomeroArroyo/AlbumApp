@@ -17,13 +17,13 @@ export class PhoneComponent implements OnInit {
 
   sendPhoneNumber() {
     console.log(this.phoneNumber);
-    this.dataService.phoneKeyGen(this.phoneNumber).subscribe((data: any) => {
+    this.dataService.phoneKeyGen({phone: this.phoneNumber}).subscribe((data: any) => {
       console.log(data);
-      if(data.goto){
-        data['phone']= this.phoneNumber;
+      /*if(data.result.goto){*/
+        data['phone'] = this.phoneNumber;
         this.local.agregar('USER__KEY', JSON.stringify(data));
         this.uiService.showSms(true);
-      }
+     /* }*/
     });
   }
 

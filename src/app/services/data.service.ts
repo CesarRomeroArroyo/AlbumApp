@@ -15,7 +15,7 @@ export class DataService {
 
   phoneKeyGen(phone: any) {
     return this.http.post(environment.hostUrl+'/user/phone_keygen', phone);
-  }
+  } 
   
   phoneValidation(validation: any) {
     return this.http.post(environment.hostUrl+'/user/phone_validation', validation);

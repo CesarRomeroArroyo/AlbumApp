@@ -18,6 +18,10 @@ export class AppComponent implements OnInit, OnChanges {
   userKey: any;
   numChromos: any;
   constructor(private local: LocalstorageService, private uiService: UiService, private dataService: DataService) {
+    
+  }
+
+  ngOnInit(): void {
     this.userKey = JSON.parse(this.local.obtener('USER__KEY'));
     this.uiService.showChromeModalSubscription().subscribe((data: Chrome) => {
       this.chromeToShow = data;
@@ -31,9 +35,7 @@ export class AppComponent implements OnInit, OnChanges {
       this.crhomes = data;
       this.numChromos = data.length;
     });
-  }
 
-  ngOnInit(): void {
     if(this.local.obtener('USER__KEY')) {
       this.keyAlbum = true;
     } else {
@@ -47,7 +49,7 @@ export class AppComponent implements OnInit, OnChanges {
       debugger;
       this.numChromos = data.length;
       this.crhomes.forEach((data) => {
-        var precio = data.dw.split(' ')[0];
+      var precio = data.dw.split(' ')[0];
       });
     });
   }

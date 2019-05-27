@@ -25,8 +25,7 @@ export class ShopchromeComponent implements OnInit {
 
   drawCavas(chromos) {
     for( let chrom of chromos) {
-      console.log('canvas'+chrom.id+'-'+chrom.b10);
-      this.uiService.canvasstack(chrom.id+'-'+chrom.b10, chrom.img);
+      this.uiService.canvasstack(chrom.guid , chrom.img);
     }
   }
  

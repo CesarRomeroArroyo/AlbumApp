@@ -20,21 +20,27 @@ export class HistoryComponent implements OnInit, AfterContentInit {
     var userKey = JSON.parse(this.local.obtener('USER__KEY'));
     this.dataService.historial({userId: userKey.id, page:this.page}).subscribe((data: any) => {
       this.chromes = data.data.chromos;
+      setTimeout(() => {
+        this.drawCavas(data.data.chromos);
+      }, 1000);
       this.next = data.data.next;
     });
   }
 
   ngAfterContentInit() {
-    var userKey = JSON.parse(this.local.obtener('USER__KEY'));
-        this.dataService.historial({phone: userKey.phone, code: userKey.code}).subscribe((data:any) => {
-          this.drawCavas(data.data.chromos);
-        });
+    /*var userKey = JSON.parse(this.local.obtener('USER__KEY'));
+        this.dataService.historial({userId: userKey.id, page:this.page}).subscribe((data:any) => {
+          setTimeout(() => {
+            this.drawCavas(data.data.chromos);
+          }, 1000);
+        });*/
   }
 
   drawCavas(chromos) {
     for( let chrom of chromos) {
-      console.log('canvas'+chrom.id+'-'+chrom.b10);
-      this.uiService.canvasstack(chrom.id+'-'+chrom.b10, chrom.img);
+      console.log('canvas'+chrom.guid);
+      console.log(chrom.guid);
+      this.uiService.canvasstack(chrom.guid, chrom.img);
     }
   }
  

@@ -11,6 +11,7 @@ export class ValidationComponent implements OnInit {
   constructor(private uiService: UiService) {
     this.showSms = false;
     this.uiService.showSmsSubscription().subscribe((data: any) => {
+      debugger
       if(data=== true || data=== false)
         this.showSms = data;
       

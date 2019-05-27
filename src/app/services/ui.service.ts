@@ -28,7 +28,7 @@ export class UiService {
     this.smsSubject.next(chrome);
   }
 
-  canvasstack (canv, paths){
+  canvasstack (canv, paths){ console.log(canv);
     var canvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById(canv);
     const canvas_width = canvas.width,
     canvas_height = canvas.height,

@@ -63,6 +63,8 @@ export class SmsComponent implements OnInit {
     var code = this.number1+this.number2+this.number3+this.number4;
     this.dataService.phoneValidation({phone: this.phone, code}).subscribe((data:any) => {
       var userKey = JSON.parse(this.local.obtener('USER__KEY'));
+      userKey['id']=data.id;
+      userKey['balance']=data.balance;
       userKey['code']=code;
       this.local.agregar('USER__KEY', JSON.stringify(userKey));
       this.dataService.initialdataSubscription();
