@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "buildmobileapp": "ng build --prod --baseHref=./ --outputPath=AlbumsApp/www"
   },
   "private": true,
   "dependencies": {
