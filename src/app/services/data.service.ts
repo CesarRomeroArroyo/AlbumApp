@@ -2,14 +2,16 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import {BehaviorSubject, Observable} from 'rxjs';
+import { LocalstorageService } from './localstorage.service';
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
   private initialDataSubject = new BehaviorSubject({});
   private shopDataSubject = new BehaviorSubject({});
+  private localUserDataSubject = new BehaviorSubject({});
   shopItems = [];
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private local: LocalstorageService) {
     
   }
 
@@ -74,5 +76,20 @@ export class DataService {
     this.shopItems = [];
     this.shopDataSubject.next(this.shopItems);
   }
+
+  initialLocalUserDataSubcription(): Observable<any> {
+    return this.localUserDataSubject.asObservable();
+  }
+
+  setLocalUserDataSubcription(data){
+    if(data){
+      this.local.agregar('USER__KEY', JSON.stringify(data));
+      this.localUserDataSubject.next(data); 
+    } else {
+      this.localUserDataSubject.next(JSON.parse(this.local.obtener('USER__KEY')));
+    }
+  }
+
+
 
 }

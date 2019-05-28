@@ -67,7 +67,7 @@ export class ShopchromeComponent implements OnInit {
       })
     }
     
-    console.log('scrolled!!');
+    
     
   }
 

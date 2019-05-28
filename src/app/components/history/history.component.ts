@@ -38,8 +38,6 @@ export class HistoryComponent implements OnInit, AfterContentInit {
 
   drawCavas(chromos) {
     for( let chrom of chromos) {
-      console.log('canvas'+chrom.guid);
-      console.log(chrom.guid);
       this.uiService.canvasstack(chrom.guid, chrom.img);
     }
   }
@@ -68,7 +66,7 @@ export class HistoryComponent implements OnInit, AfterContentInit {
       })
     }
     
-    console.log('scrolled!!');
+    
     
   }
 }

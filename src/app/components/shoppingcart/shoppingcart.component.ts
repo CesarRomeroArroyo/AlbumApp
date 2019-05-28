@@ -28,8 +28,12 @@ export class ShoppingcartComponent implements OnInit {
 
   shop(){
     var userKey = JSON.parse(this.local.obtener('USER__KEY'));
-    this.dataService.shop({userId: userKey.id, chromos: this.crhomes}).subscribe((data) => {
+    this.dataService.shop({userId: userKey.id, chromos: this.crhomes}).subscribe((data :any) => {
+      userKey.balance = data.balance;
+      this.dataService.setLocalUserDataSubcription(userKey);
       this.dataService.cleanShopData();
+      debugger
+  
     });
   }
 

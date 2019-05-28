@@ -23,6 +23,10 @@ export class AppComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.userKey = JSON.parse(this.local.obtener('USER__KEY'));
+    this.dataService.initialLocalUserDataSubcription().subscribe((userData) => {
+      if(userData.id)
+        this.userKey = userData;
+    });
     this.uiService.showChromeModalSubscription().subscribe((data: Chrome) => {
       this.chromeToShow = data;
     });

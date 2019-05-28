@@ -28,25 +28,27 @@ export class ChromesComponent implements OnInit, AfterContentInit {
     this.route.paramMap.subscribe(params => {
       this.album = params.get("id")
     })
-    var userKey = JSON.parse(this.local.obtener('USER__KEY'));
-    this.dataService.album({userId: userKey.id, idAlbum: this.album, page:this.page}).subscribe((data: any) => {
-      this.title = data.data.album.title;
-      this.chromes = data.data.album.chromos;
-      this.next = data.data.next;
+      var userKey = JSON.parse(this.local.obtener('USER__KEY'));
+      this.dataService.album({userId: userKey.id, idAlbum: this.album, page:this.page}).subscribe((data: any) => {
+      this.chromes = data.data.chromos;
+          setTimeout(() => {
+            this.drawCavas(data.data.chromos);
+          }, 1000);
+          this.next = data.data.next;
+        
     });
   }
 
   ngAfterContentInit() {
-    var userKey = JSON.parse(this.local.obtener('USER__KEY'));
-        this.dataService.album({phone: userKey.phone, idAlbum: this.album, code: userKey.code}).subscribe((data:any) => {
-          this.drawCavas(data.data.album.chromos);
-        });
+    /*var userKey = JSON.parse(this.local.obtener('USER__KEY'));
+        this.dataService.album({userId: userKey.id, idAlbum: this.album, code: userKey.code}).subscribe((data:any) => {
+          this.drawCavas(data.data.chromos);
+        });*/
   }
 
   drawCavas(chromos) {
     for( let chrom of chromos) {
-      console.log('canvas'+chrom.id+'-'+chrom.b10);
-      this.uiService.canvasstack(chrom.id+'-'+chrom.b10, chrom.img);
+      this.uiService.canvasstack(chrom.guid, chrom.img);
     }
   }
  
@@ -74,7 +76,7 @@ export class ChromesComponent implements OnInit, AfterContentInit {
       })
     }
     
-    console.log('scrolled!!');
+    
     
   }
 }

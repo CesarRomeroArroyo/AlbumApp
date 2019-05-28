@@ -21,7 +21,10 @@ export class InterceptorService implements HttpInterceptor {
       tap(evt => {
           if (evt instanceof HttpResponse) {
             if(evt.body.msg){
-              Swal.fire('',evt.body.msg[0].text , 'error')
+              if (evt.body.msg[0].type == "error")
+                  Swal.fire('',evt.body.msg[0].text , 'error')
+              else
+                 Swal.fire('',evt.body.msg[0].text , 'success')
             }
           }
       }));

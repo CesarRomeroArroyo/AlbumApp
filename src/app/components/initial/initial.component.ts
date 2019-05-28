@@ -20,12 +20,16 @@ export class InitialComponent implements OnInit, AfterContentInit {
 
   ngOnInit() {
     this.dataService.initialdataSubscription().subscribe((data:any)=>{
+      
       if(data.chromos){
         this.chromes = data.chromos;
       } else {
         var userKey = JSON.parse(this.local.obtener('USER__KEY'));
         this.dataService.phoneValidation({phone: userKey.phone, code: userKey.code}).subscribe((data:any) => {
           this.chromes = data.data.chromos;
+            setTimeout(() => {
+              this.drawCavas(data.data.chromos);
+            }, 1000);
           console.log(this.chromes);
         });
       }
@@ -33,14 +37,19 @@ export class InitialComponent implements OnInit, AfterContentInit {
   }
 
   ngAfterContentInit() {
-    var userKey = JSON.parse(this.local.obtener('USER__KEY'));
+    /*var userKey = JSON.parse(this.local.obtener('USER__KEY'));
         this.dataService.phoneValidation({phone: userKey.phone, code: userKey.code}).subscribe((data:any) => {
           
           for( let chrom of data.data.chromos) {
-            this.uiService.canvasstack (chrom.id, chrom.img)
+            this.uiService.canvasstack (chrom.guid, chrom.img)
           }
         });
-    
+    */
+  }
+  drawCavas(chromos) {
+    for( let chrom of chromos) {
+      this.uiService.canvasstack(chrom.guid, chrom.img);
+    }
   }
 
   showChromeModal(chrome: Chrome){

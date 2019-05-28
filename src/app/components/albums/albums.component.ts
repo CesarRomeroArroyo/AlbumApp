@@ -41,7 +41,7 @@ export class AlbumsComponent implements OnInit {
       })
     }
     
-    console.log('scrolled!!');
+    
     
   }
 
